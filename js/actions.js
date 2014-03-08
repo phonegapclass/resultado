@@ -9,18 +9,22 @@ function escribir(texto){
     // device APIs are available
     //
     function onDeviceReady() {
+        alert(0);
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
     }
 
     function gotFS(fileSystem) {
+        alert(1);
         fileSystem.root.getFile("practica8.txt", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
+        alert(2);
         fileEntry.createWriter(gotFileWriter, fail);
     }
 
     function gotFileWriter(writer) {
+        alert(3);
         writer.onwriteend = function(evt) {
             navigator.notification.alert("El archivo fue escrito satisfactoriamente.",null,"Escribir","Aceptar");
         };
