@@ -1,7 +1,7 @@
 function listar(){
     function onSuccess(contacts) {
         for(i=0;i<=contacts.length;i++){
-            $('#contactos .plastic').html('<li><a href="tel:'+contacts[i].phoneNumbers[0]+'">'+contacts[i].name.formatted+'</a></li>');
+            $('#contactos .plastic').html('<li><a href="tel:'+contacts[i].phoneNumbers[0]+'">'+contacts[i].displayName+'</a></li>');
         }
     }
     function onError(contactError) {
